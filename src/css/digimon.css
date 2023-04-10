@@ -1,0 +1,16 @@
+.list-items {
+    background-color: grey;
+    margin-bottom: 10px
+}
+li .img{
+    width: 100px;
+    height: 100px;
+}
+
+.grid-layaout{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 90%;
+    margin: 0 auto;
+    background-color: rebeccapurple;
+}
