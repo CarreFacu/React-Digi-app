@@ -1,0 +1,12 @@
+.pagination{
+    margin: 20px 0 0 45px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.button-next{
+    text-align: end ;
+    margin-right: 20px;
+}
+.button-prev{
+    margin-left: 20px;
+}

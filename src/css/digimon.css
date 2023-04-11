@@ -1,10 +1,10 @@
 .list-items {
-    background-color: grey;
-    margin-bottom: 10px
-}
-li .img{
-    width: 100px;
-    height: 100px;
+    background-color: rgb(225, 225, 225);
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    border-radius: 15px;
+
 }
 
 .grid-layaout{
@@ -12,5 +12,39 @@ li .img{
     grid-template-columns: 40% 60%;
     width: 90%;
     margin: 0 auto;
-    background-color: rebeccapurple;
+    background-color: rgb(197, 80, 15);
+}
+.list-image{
+    height: 100px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+.btn-detail{
+    text-align: right;
+    margin: 35% 15px 15px 0;
+}
+.digimon-name{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+.from{
+    margin: 15px 15px 0 100px;
+    border-radius: 10px ;
+}
+.css-input {
+    padding: 9px;
+    font-size: 16px;
+    border-width: 0px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: -50px 0px 5px rgba(66,66,66,.75);
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.css-input:focus {
+    outline:none;
 }
