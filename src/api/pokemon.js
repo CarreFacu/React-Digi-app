@@ -14,6 +14,7 @@ export async function getDigimonById(id){
 export async function getDigimonByName(name){
     const response = await fetch(`https://www.digi-api.com/api/v1/digimon/${name}`);
     const data = await response.json();
+    console.log(data)
     return data;
 }
 export async function getDigimonPageable(url){

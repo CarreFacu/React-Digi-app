@@ -24,7 +24,6 @@ function digimons() {
         event.preventDefault();
     }
     const onPrevious = () =>{
-        console.log(digimons.pageable.previousPage + '?pageSize=7')
         getDigimonPageable(digimons.pageable.previousPage + '&pageSize=7').then((data) => getDigimons(data))
     }
 

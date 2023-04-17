@@ -2,7 +2,6 @@ import Button from '@mui/material/Button';
 import '../css/pagination.css'
 
 function Pagination({prev, next, onPrevious, onNext}) {
-    console.log(prev)
     const handlePrevious = () =>{
         onPrevious();
     }

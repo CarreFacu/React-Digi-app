@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button";
+import {Link} from "react-router-dom";
 import '../css/digimonCard.css'
 
 function DigimonCard(props) {
@@ -14,7 +16,13 @@ function DigimonCard(props) {
                 {props.digimon.types.map((digimon) => (
                     <li key={digimon.id}>
                         <p>{digimon.type}</p>
+                        <Link to={`/digimon/${digimon.id}`}>
+                            <Button  variant="contained">
+                                Detalle
+                            </Button>
+                        </Link>
                     </li>
+
                 ))}
             </ul>
         </div>
