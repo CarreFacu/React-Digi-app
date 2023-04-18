@@ -12,3 +12,28 @@
     height: 300px;
     background-color: white;
 }
+.grid-evolutions{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.list-items {
+    background-color: rgb(225, 225, 225);
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 20% 20% auto 20%;
+    border-radius: 15px;
+
+}
+.btn-detail{
+    text-align: right;
+    margin: 20% 15px 15px 0;
+}
+.evolutions{
+    margin: 0 15px 0 30px;
+}
+.digimon-name{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    margin-left: 100px;
+    margin-top: 30px;
+}

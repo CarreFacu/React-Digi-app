@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import '../css/digimonCard.css'
 
 function DigimonCard(props) {
-    console.log(props.digimon.descriptions.length)
     return (
         <div className="grid">
             <h2 className="title-detail">{props.digimon.name}</h2>
@@ -18,7 +17,7 @@ function DigimonCard(props) {
                         <p>{digimon.type}</p>
                         <Link to={`/digimon/${digimon.id}`}>
                             <Button  variant="contained">
-                                Detalle
+                                More Details
                             </Button>
                         </Link>
                     </li>

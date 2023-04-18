@@ -5,6 +5,7 @@ import Pagination from "./Pagination.jsx";
 import '../css/digimon.css'
 
 import Button from '@mui/material/Button';
+import { RotatingTriangles } from  'react-loader-spinner'
 
 function digimons() {
     const [digimons, getDigimons] = useState(null)
@@ -15,7 +16,7 @@ function digimons() {
         getDigimonById(id).then((data) => getDigimonDetail(data))
     }
     const  handleSubmit = (event) => {
-        getDigimonByName(nameDigimon).then((data) => {console.log(data)
+        getDigimonByName(nameDigimon).then((data) => {
         if(data.message === "Digimon not found"){
             return
         }else{
@@ -41,23 +42,33 @@ function digimons() {
             <div className="grid-layaout">
                 <div className="listItem">
                     <Pagination onNext={onNext} onPrevious={onPrevious} next={digimons?.pageable} prev={digimons?.pageable}/>
-                    <ul className="list">
-                        {digimons?.content?.map((digimon) => (
-                            <li className="list-items" key={digimon.id}>
-                                <img className="list-image" src={digimon.image}/>
-                                <p className="digimon-name">{digimon.name}</p>
-                                <div className="btn-detail">
-                                    <Button  variant="contained"
-                                            onClick={() => {
-                                                onClickDetails(digimon.id);
-                                            }}>
-                                        Detalle
-                                    </Button>
-                                </div>
+                    {!digimons ? <RotatingTriangles
+                        visible={true}
+                        height="200"
+                        width="200"
+                        colors={['#e1e1e1', '#1976d2', '#000000']}
+                        ariaLabel="rotating-triangels-loading"
+                        wrapperStyle={{'margin': '10% 0 0 30%'}}
+                        wrapperClass="rotating-triangels-wrapper"
+                    /> :
+                        <ul className="list">
+                            {digimons?.content?.map((digimon) => (
+                                <li className="items-list" key={digimon.id}>
+                                    <img className="list-image" src={digimon.image}/>
+                                    <p className="digimon-name">{digimon.name}</p>
+                                    <div className="btn-detail">
+                                        <Button  variant="contained"
+                                                 onClick={() => {
+                                                     onClickDetails(digimon.id);
+                                                 }}>
+                                            Detail
+                                        </Button>
+                                    </div>
 
-                            </li>
-                        ))}
-                    </ul>
+                                </li>
+                            ))}
+                        </ul>}
+
                 </div>
                 <div>
                     <form className="from" onSubmit={handleSubmit}>
@@ -67,9 +78,9 @@ function digimons() {
                             value={nameDigimon}
                             onChange={(e) => setNameDigimon(e.target.value)}
                         />
-                        <Button variant="contained" type='submit'>Enviar</Button>
+                        <Button variant="contained" type='submit'>Search</Button>
                     </form>
-                    {digimonDetail ? <DigimonCard digimon={digimonDetail}/> : "Por favor Seleccione un Digimon para ver sus detalles"}
+                    {digimonDetail ? <DigimonCard digimon={digimonDetail}/> : ""}
                 </div>
             </div>
 
